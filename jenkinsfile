@@ -1,0 +1,12 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Hello') {
+            steps {
+                git branch: 'main', credentialsId: 'GITHUB', url: 'git@github.com:vysaghkrishnan/infra.git'
+                echo 'Hello World'
+            }
+        }
+    }
+}

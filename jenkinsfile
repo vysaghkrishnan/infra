@@ -7,10 +7,10 @@ pipeline {
                 git branch: 'main', credentialsId: 'GITHUB', url: 'git@github.com:vysaghkrishnan/infra.git'
                 echo 'Hello World'
                 
-        sh "${env.TERRAFORM_HOME}/terraform init -input=false"
-        sh "${env.TERRAFORM_HOME}/terraform plan -out=tfplan -input=false -var-file='dev.tfvars'"
-      
-        sh "${env.TERRAFORM_HOME}/terraform apply -input=false tfplan"
+       sh 'terraform init'
+        sh 'terraform validate'
+        sh 'terraform plan'
+        sh 'terraform apply --var-file=dev.tfvars'
       }
     }
     

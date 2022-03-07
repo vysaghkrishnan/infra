@@ -1,5 +1,5 @@
 module "mysg_calling_module" {
-  source = "git@github.com:vysaghkrishnan/terraform-modules.git//sg/module"
+  source  = "github.com/vysaghkrishnan/terraform-modules/sg-module"
 
   name        = "mysg"
   description = "Security group for mysg within VPC"

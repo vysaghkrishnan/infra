@@ -11,10 +11,10 @@ module "ec2_calling_module" {
 
     project = "MY_TF_PRO"
 
-    key_name = module.my_keypair_calling_module.key_name
+   
 
     public_subnet_id = module.my_public_subnet_calling_module.my_public_subnet_id
 
-    vpc_security_group_ids = module.my_sg_calling_module.security_group_id
+    
 
 }
